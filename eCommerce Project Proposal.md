@@ -1,0 +1,34 @@
+Team Blue: Marco Agostinelli, Arshjit Sansoe
+
+We will be creating a marketplace web application similar to Amazon where companies can sell products or services to consumers.
+The clientele is anyone of any age who is interested in what we are selling on our website.
+
+The client will have the ability to create their own account on our website to shop with
+
+Marco's features:
+
+1. Seller: List products for sale
+2. Seller: Remove products from being sold
+3. Seller: Display different categories of items
+4. User: search for products
+5. User: bookmark products
+6. User: add products to cart
+7. User: view your cart
+8. User: remove products from cart
+9. User: view the description of a product
+10. User: leave a review on a product
+
+Arshjit's features:
+
+1. Seller: view how much of each product has been sold
+2. Seller: view how much inventory is left for a product
+3. User: leave a rating on a product
+4. User: input payment details
+5. User: input shipping details
+6. User: track delivery
+7. User: view browsing history
+8. User: clear browsing history
+9. User: view product suggestions
+10. User: add products to wish list
+
+We will spend around 100 hours developping this eCommerce website. (50 hours each)
