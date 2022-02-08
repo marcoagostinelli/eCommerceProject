@@ -14,21 +14,26 @@ Marco's features:
 5. User: bookmark products
 6. User: add products to cart
 7. User: view your cart
-8. User: remove products from cart
+8. User: remove products from cart [^1]
 9. User: view the description of a product
 10. User: leave a review on a product
+[^1]: Modifying the product quantity in the cart is standard in these applications.
 
 Arshjit's features:
 
 1. Seller: view how much of each product has been sold
 2. Seller: view how much inventory is left for a product
-3. User: leave a rating on a product
+3. User: leave a rating on a product [^2]
 4. User: input payment details
 5. User: input shipping details
-6. User: track delivery
+6. User: track delivery [^3]
 7. User: view browsing history
 8. User: clear browsing history
-9. User: view product suggestions
-10. User: add products to wish list
+9. User: view product suggestions [^4]
+10. User: add products to wish list[^5]
+[^2]: This should be only for those products that were purchased.
+[^3]: In order to track a delivery a seller must have shipped a product and entered the delivery information. This should be a story as well.
+[^4]: How do you plan on generating the suggestions? Is there a mechanism that you can readily choose to generate them or are they input by the site admins?
+[^5]: Usually, if you can add to the wish list, then you should be able to remove from it as well.
 
 We will spend around 100 hours developping this eCommerce website. (50 hours each)
