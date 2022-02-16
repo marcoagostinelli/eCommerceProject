@@ -11,7 +11,7 @@ Marco's features:
 2. Seller: Remove products from being sold
 3. Seller: Display different categories of items
 4. User: search for products
-5. User: bookmark products
+5. User: add profile picture
 6. User: add products to cart
 7. User: view your cart
 8. User: add products to wishlist
