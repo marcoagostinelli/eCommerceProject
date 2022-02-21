@@ -26,10 +26,10 @@ Arshjit's features:
 3. User: leave a rating on a product [^2]
 4. User: input payment details
 5. User: input shipping details
-6. User: add products to wish list [^3]
+6. User: save products for later [^3]
 7. User: view browsing history
 8. User: clear browsing history
-9. User: view product suggestions according to the item that is selected [^4]
+9. User: view related products according to the item that is selected [^4]
 10. User: remove products from wish list[^5]
 [^2]: This should be only for those products that were purchased.
 [^3]: In order to track a delivery a seller must have shipped a product and entered the delivery information. This should be a story as well.
