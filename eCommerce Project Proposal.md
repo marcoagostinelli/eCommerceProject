@@ -26,7 +26,7 @@ Arshjit's features:
 3. User: leave a rating on a product [^2]
 4. User: input payment details
 5. User: input shipping details
-6. User: save products for later [^3]
+6. User: filtering products [^3]
 7. User: view browsing history
 8. User: clear browsing history
 9. User: view related products according to the item that is selected [^4]
