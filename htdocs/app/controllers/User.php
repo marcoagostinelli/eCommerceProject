@@ -29,6 +29,9 @@ class User extends \app\core\Controller{
 						$client = new \app\models\Client();
 						$client = $client->get($_SESSION['user_id']);
 						$_SESSION['client_id'] = $client->client_id;
+
+						//store the clients profile pic in the session
+						$_SESSION['profilePic'] = $client->picture;
 					}
 
 
@@ -65,18 +68,20 @@ class User extends \app\core\Controller{
 				 	$newSeller->insert();
 				 }else{
 				 	//if the user selects client, then the additional fields must be filled
-				 	if ($_POST['payment_details']!="" && $_POST['address']!=""){
+				 	if ($_POST['payment_details'] != "" && $_POST['address'] != ""){
 				 	$newClient = new \app\models\Client();
 				 	$newClient->user_id = $newUser->user_id;
 				 	$newClient->payment_details = $_POST['payment_details'];
 				 	$newClient->address = $_POST['address'];
-					$newClient->insert();		 		
+					$newClient->insert();	
+				 	header('location:/User/index');						 		
 				 }else{
+				 	$newUser->delete($newUser->user_id);			 	
 				 	$this->view('User/register','Please complete all fields');
-				 }
+				 	}
 				 }
 
-				 header('location:/User/index');
+
 			}else{
 				if ($newUser->exists()){
 					$this->view('User/register','An account with that username already exists');

@@ -30,9 +30,12 @@ class Client extends \app\core\Controller{
 			$filename = $this->imageUpload();
 
 			if($filename!=false){
-				if($client->picture != 'default.jpg')
+				if($client->picture != 'default.jpg'){
 					unlink('pictures/' . $client->picture);
+				}
 				$client->picture=$filename;
+				//update the session's profile pic
+				$_SESSION['profilePic'] = $filename;
 			}
 			$client->update();
 			header('location:/Client/index/'.$client->client_id);			

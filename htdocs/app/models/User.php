@@ -31,12 +31,11 @@ class User extends \app\core\Model{
 		return $this->get($this->username) != false;
 	}
 
-	function getProfile(){
-		$SQL = 'SELECT * FROM profile WHERE user_id = :user_id';
+
+	public function delete($user_id){
+		$SQL = 'DELETE FROM user WHERE user_id = :user_id';
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['user_id'=>$this->user_id]);
-		$STMT->setFetchMode(\PDO::FETCH_CLASS,"app\models\Profile");
-		return $STMT->fetch();
-	}
+		$STMT->execute(['user_id'=>$user_id]);
+	}	
 	
 }

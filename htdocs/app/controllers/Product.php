@@ -33,4 +33,10 @@ class Product extends \app\core\Controller{
 		$product->delete($product_id);
 		header('location:/Product/index');
 	}	
+
+	public function details($product_id){
+		$product = new \app\models\Product();
+		$product = $product->get($product_id);
+		$this->view('Product/details',$product);
+	}	
 }
