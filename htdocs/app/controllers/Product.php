@@ -2,6 +2,8 @@
 namespace app\controllers;
 
 class Product extends \app\core\Controller{
+
+#[\app\filters\Seller]
 	public function index(){
 		$product = new \app\models\Product();
 		$products = $product->getAllMyProducts();
@@ -12,6 +14,8 @@ class Product extends \app\core\Controller{
 		}
 
 	}
+
+#[\app\filters\Seller]
 	public function create(){
 		if (!isset($_POST['action'])){
 			$this->view('Product/create');
@@ -34,6 +38,7 @@ class Product extends \app\core\Controller{
 		}
 		
 	}
+#[\app\filters\Seller]
 	public function delete($product_id){
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
@@ -45,6 +50,7 @@ class Product extends \app\core\Controller{
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
 		$this->view('Product/details',$product);
+		//TODO: add a product to cart
 	}
 
 	private function imageUpload(){

@@ -3,6 +3,7 @@ namespace app\controllers;
 
 class User extends \app\core\Controller{
 
+#[\app\filters\Logout]//make sure the user is not logged in
 	public function index(){ //login page
 		if (!isset($_POST['action'])){
 			//if nobody is logged in
@@ -45,6 +46,7 @@ class User extends \app\core\Controller{
 		}
 	}
 
+#[\app\filters\Logout]
 	function register(){
 		if(!isset($_POST['action'])){
 			$this->view('User/register');

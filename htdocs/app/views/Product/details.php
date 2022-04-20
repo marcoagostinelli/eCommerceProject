@@ -10,9 +10,16 @@
 
 		<h1><?php echo $data->name ?></h1>
 		<img src='/pictures/<?= $data->image ?>'height='100' width='100' /><br><br>
-		<p><?php echo "$".$data->price ?></p><br>
-		<p><?php echo $data->description?><p><br>
-		<p><?php echo "Rating: ".$data->rating . "/5"?><p>
+		<p><?php echo "$".$data->price ?></p>
+		<form action='' method='post'>
+			<input style="float:left; margin-right:20px" type="number" name="quantity" value=1 min="1" max="5">
+			<label><input style="float:right;" type="submit" name='action' value='Add to Cart' class='form-control'></label>
+		</form>
+		<div style="border-top:1px solid";><br>
+			<p><?php echo $data->description?><p><br>
+			<p><?php echo "Rating: ".$data->rating . "/5"?><p>
+		</div>
+
 	</div>
 </body>
 </html>

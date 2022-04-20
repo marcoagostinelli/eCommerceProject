@@ -1,6 +1,7 @@
 <?php 
 namespace app\controllers;
 
+#[\app\filters\Client]
 class Client extends \app\core\Controller{
 	public function index(){
 			$user = new \app\models\User();

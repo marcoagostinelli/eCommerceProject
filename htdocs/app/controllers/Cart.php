@@ -1,6 +1,7 @@
 <?php 
 namespace app\controllers;
 
+#[\app\filters\Client]
 class Cart extends \app\core\Controller{
 
 	public function index(){
