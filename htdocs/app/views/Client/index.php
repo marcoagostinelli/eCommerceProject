@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class='container' style='margin-top: 3px;'>
-		<?php $this->view('shared/menu_bar',$data[1]);?>
+		<?php $this->view('shared/menu_bar');?>
 
 		<h1>My Client Profile</h1>
 		<h4><?=$data[0]->first_name ." ". $data[0]->last_name?></h4><br>
