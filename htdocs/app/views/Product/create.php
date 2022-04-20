@@ -9,10 +9,11 @@
 		<?php $this->view('shared/menu_bar');?>
 
 		<h1>List Product</h1>
-		<form method='post' action=''>
+		<form method='post' action='' enctype='multipart/form-data'>
 			<label class='form-label'>Product Name:<input type='text' name='name' class='form-control' /></label><br>
 			<label class='form-label'>Description:<textarea name='description' class='form-control'></textarea></label><br>
 			<label class='form-label'>Price:<input step=".01" name="price" type="number" class='form-control'/></label><br>
+			<label>Product image: <input type='file' name='productImage' class='form-control' /></label>
 			<div style="padding-top: 10px;">
 			<p> Select a Category</p>
 				<label >Baby <input  type="radio" name="category_name" value="baby" checked></label><br> 

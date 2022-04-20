@@ -9,6 +9,7 @@
 		<?php $this->view('shared/menu_bar');?>
 
 		<h1><?php echo $data->name ?></h1>
+		<img src='/pictures/<?= $data->image ?>'height='100' width='100' /><br><br>
 		<p><?php echo "$".$data->price ?></p><br>
 		<p><?php echo $data->description?><p><br>
 		<p><?php echo "Rating: ".$data->rating . "/5"?><p>

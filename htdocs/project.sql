@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2022 at 11:34 PM
+-- Generation Time: Apr 20, 2022 at 04:57 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `project`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `quantity` int(10) NOT NULL,
+  `transaction_date` date NOT NULL,
+  `client_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -63,7 +76,7 @@ CREATE TABLE `client` (
 
 INSERT INTO `client` (`client_id`, `payment_details`, `address`, `picture`, `user_id`) VALUES
 (2, '56756756', '75675675675675', 'default.jpg', 40),
-(3, '54443211', '44455', '6234c71d559aa.png', 41);
+(3, '54443211', '44455 main street', '6234c71d559aa.png', 41);
 
 -- --------------------------------------------------------
 
@@ -77,6 +90,7 @@ CREATE TABLE `product` (
   `description` text NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `rating` int(2) NOT NULL,
+  `image` varchar(50) NOT NULL DEFAULT 'shoppingCart.png',
   `category_name` varchar(100) NOT NULL,
   `seller_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -85,11 +99,9 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_id`, `name`, `description`, `price`, `rating`, `category_name`, `seller_id`) VALUES
-(6, 'toy plane', 'it flies', '10.99', 0, 'sports', 2),
-(7, 'shovel', 'this is a garden shovel', '24.85', 0, 'garden', 2),
-(8, 'Blender', 'this is a blender', '55.00', 0, 'home', 4),
-(9, 'Bucket', 'this is a garden bucket', '10.50', 0, 'garden', 4);
+INSERT INTO `product` (`product_id`, `name`, `description`, `price`, `rating`, `image`, `category_name`, `seller_id`) VALUES
+(11, 'Mop', 'this mop cleans the floor', '20.99', 0, 'shoppingCart.png', 'home', 4),
+(18, 'Vacum Cleaner', 'This is a high quality vacum cleaner', '140.00', 0, '62601d96e9fa9.jpg', 'home', 4);
 
 -- --------------------------------------------------------
 
@@ -130,16 +142,23 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password_hash`, `first_name`, `last_name`, `role`) VALUES
-(22, 'hi', '$2y$10$5CNN65fzr0E12z73HUnfv.qN7hcBFtVqszBX0C0iIpz0dC8OyV4W6', 'hi', 'hi', 'customer'),
 (23, 'sell', '$2y$10$I5PmeH2XiHKYI2isXdvA5.1MJzae//p857uWERqXPVhZT8H7KrS9q', 'seller', 'store', 'seller'),
 (26, 'new', '$2y$10$IrdCK7YhyqY.ElMizM9dbu8THASGru.omDq0Z2fRH67jJDLOFSzse', 'n', 'n', 'seller'),
 (40, 'ni', '$2y$10$YGbku7x3hHIJLEWZiiqmDOWsNimAtz6a3MQ5QX02igYQ4UokD1eY6', 'ni', 'ni', 'customer'),
 (41, 'customer', '$2y$10$E1asxwa8Ka8ZimacXy1REONSjRi7TwWvahIIhQus/ttLFcQ4vz6au', 'cust', 'customer', 'customer'),
-(42, 'seller', '$2y$10$d48tp/o8x94tCp0xXjHypuR8Xa3rJ5MnkNajeHABv6Nqp5rCkEv2G', 'Sam', 'Seller', 'seller');
+(42, 'seller', '$2y$10$d48tp/o8x94tCp0xXjHypuR8Xa3rJ5MnkNajeHABv6Nqp5rCkEv2G', 'Sam', 'Seller', 'seller'),
+(47, 'hi', '$2y$10$iIOxcWjWg/YZiN82X3a.Yu9zG5rhyVNCOaOKY5fl4I/0jUdSp4gzG', 'hi', 'hi', 'customer');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`client_id`),
+  ADD KEY `cart_productid_fk` (`product_id`);
 
 --
 -- Indexes for table `category`
@@ -183,13 +202,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `seller`
@@ -201,11 +220,18 @@ ALTER TABLE `seller`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_clientid_fk` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`),
+  ADD CONSTRAINT `cart_productid_fk` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
 
 --
 -- Constraints for table `client`

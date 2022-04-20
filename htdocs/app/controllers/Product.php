@@ -17,6 +17,13 @@ class Product extends \app\core\Controller{
 			$this->view('Product/create');
 		}else{
 			$newProduct = new \app\models\Product();
+			//add the product picture
+			$filename = $this->imageUpload();
+			
+			if ($filename !=false){
+				$newProduct->image=$filename;
+			}
+
 			$newProduct->name = $_POST['name'];
 			$newProduct->description = $_POST['description'];
 			$newProduct->price = $_POST['price'];
@@ -38,5 +45,26 @@ class Product extends \app\core\Controller{
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
 		$this->view('Product/details',$product);
+	}
+
+	private function imageUpload(){
+		$filename=false;
+		$file = $_FILES['productImage'];
+		$acceptedTypes = ['image/jpeg'=>'jpg',
+			'image/gif'=>'gif',
+			'image/png'=>'png'];
+		if(empty($file['tmp_name']))
+			return false;
+
+		$fileData = getimagesize($file['tmp_name']);
+		if($fileData!=false && 
+			in_array($fileData['mime'],array_keys($acceptedTypes))){
+
+			$folder = 'pictures';
+			$filename = uniqid() . '.' . $acceptedTypes[$fileData['mime']];
+
+			move_uploaded_file($file['tmp_name'], "$folder/$filename");
+		}
+		return $filename;
 	}	
 }
