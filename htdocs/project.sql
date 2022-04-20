@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2022 at 04:57 PM
+-- Generation Time: Apr 21, 2022 at 12:13 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -33,6 +33,14 @@ CREATE TABLE `cart` (
   `client_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`quantity`, `transaction_date`, `client_id`, `product_id`) VALUES
+(5, '0000-00-00', 3, 11),
+(9, '0000-00-00', 3, 18);
 
 -- --------------------------------------------------------
 
@@ -157,7 +165,7 @@ INSERT INTO `user` (`user_id`, `username`, `password_hash`, `first_name`, `last_
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`client_id`),
+  ADD PRIMARY KEY (`client_id`,`product_id`),
   ADD KEY `cart_productid_fk` (`product_id`);
 
 --

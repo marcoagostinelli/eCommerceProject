@@ -47,10 +47,14 @@ class Product extends \app\core\Controller{
 	}	
 
 	public function details($product_id){
-		$product = new \app\models\Product();
-		$product = $product->get($product_id);
-		$this->view('Product/details',$product);
-		//TODO: add a product to cart
+		$product = new \app\models\Product();		
+		if (!isset($_POST['action'])){
+			$product = $product->get($product_id);
+			$this->view('Product/details',$product);			
+		}else{
+			//send the product id and quantity to addToCart	
+			header("location:/Cart/addToCart"."/" . $product_id ."/". $_POST['quantity']);
+		}
 	}
 
 	private function imageUpload(){

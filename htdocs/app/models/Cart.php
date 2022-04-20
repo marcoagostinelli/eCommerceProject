@@ -11,6 +11,7 @@ class Cart extends \app\core\Model{
 		$SQL = 'SELECT * FROM cart WHERE client_id = :client_id';
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['client_id'=>$client_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Cart");
 		return $STMT->fetchAll();
 	}
 
@@ -18,13 +19,14 @@ class Cart extends \app\core\Model{
 		$SQL = 'SELECT * FROM cart WHERE product_id = :product_id AND client_id = :client_id';
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['client_id'=>$client_id,'product_id'=>$product_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Cart");	
 		return $STMT->fetch();
 	}
 
 	public function addToCart(){
-		$SQL = 'INSERT INTO cart(client_id,product_id,quantity,transaction_date) VALUES(:client_id,:product_id,:quantity,:transaction_date)';
+		$SQL = 'INSERT INTO cart(client_id,product_id,quantity) VALUES(:client_id,:product_id,:quantity)';
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['client_id'=>$this->client_id,'product_id'=>$this->product_id,'quantity'=>$this->quantity,'transaction_date'=>$this->transaction_date]);
+		$STMT->execute(['client_id'=>$this->client_id,'product_id'=>$this->product_id,'quantity'=>$this->quantity]);
 	}
 
 	public function deleteFromCart($product_id,$client_id){
@@ -39,5 +41,9 @@ class Cart extends \app\core\Model{
 		$STMT->execute(['client_id'=>$client_id]);
 	}
 
-	//TODO:add functions to modify product quantities
+	public function updateQuantity($product_id,$client_id){
+		$SQL = 'UPDATE cart SET quantity = :quantity WHERE product_id = :product_id AND client_id = :client_id';
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['quantity'=>$this->quantity,'product_id'=>$this->product_id,'client_id'=>$this->client_id]);
+	}
 }
