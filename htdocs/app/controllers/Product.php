@@ -42,6 +42,9 @@ class Product extends \app\core\Controller{
 	public function delete($product_id){
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
+		if ($product->image != 'shoppingCart.png'){
+			unlink('pictures/' . $product->image);
+		}
 		$product->delete($product_id);
 		header('location:/Product/index');
 	}	

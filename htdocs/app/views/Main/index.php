@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class='container' style='margin-top: 3px;'>
-		<?php $this->view('shared/menu_bar',$data[1]);?>
+		<?php $this->view('shared/menu_bar',$data['role']);?>
 
 		<h1>Shopping Website</h1>
 
@@ -25,11 +25,11 @@
 		</form>
 		<label><a style="text-decoration:none;" href="/Main/index"><input type='button' value='Reset Filters ' class='form-control'/></a></label><br><br>
 	<?php 
-		foreach ($data[2] as $category){ ?>
+		foreach ($data['categories'] as $category){ ?>
 			<ul style="float: left; list-style:none; margin-right:25px;">
 				<li><h5><?=$category->name?></h5></li>
 
-			<?php foreach ($data[0] as $product){ 
+			<?php foreach ($data['products'] as $product){ 
 
 				if ($product->category_name == $category->name){ ?>
 				<li><a style="text-decoration: none;" href="/Product/details/<?=$product->product_id?>"><?=$product->name ?></a></li>

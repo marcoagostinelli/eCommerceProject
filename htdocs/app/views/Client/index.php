@@ -9,12 +9,12 @@
 		<?php $this->view('shared/menu_bar');?>
 
 		<h1>My Client Profile</h1>
-		<h4><?=$data[0]->first_name ." ". $data[0]->last_name?></h4><br>
-		<img src='/pictures/<?=$data[1]->picture ?>' height='100' width='100'/>
-		<a href='/Client/addProfilePic/<?=$data[1]->client_id?>'>Change Profile Picture</a><br><br>
+		<h4><?=$data['user']->first_name ." ". $data['user']->last_name?></h4><br>
+		<img src='/pictures/<?=$data['client']->picture ?>' height='100' width='100'/>
+		<a href='/Client/addProfilePic/<?=$data['client']->client_id?>'>Change Profile Picture</a><br><br>
 		<form action='' method='post'>
-			<label class='form-label'>Payment Details:<input  name="payment_details"  value="<?=$data[1]->payment_details?>"type="text" class='form-control'/></label><br>
-			<label class='form-label'>Address:<input  name="address" type="text" value="<?=$data[1]->address?>" class='form-control'/></label><br>
+			<label class='form-label'>Payment Details:<input  name="payment_details"  value="<?=$data['client']->payment_details?>"type="text" class='form-control'/></label><br>
+			<label class='form-label'>Address:<input  name="address" type="text" value="<?=$data['client']->address?>" class='form-control'/></label><br>
 			<label><input type="submit" name='action' value='Confirm' class='form-control' /></label>
 		</form>
 

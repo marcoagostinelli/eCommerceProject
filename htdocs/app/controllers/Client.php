@@ -10,9 +10,9 @@ class Client extends \app\core\Controller{
 			$client = $client->get($_SESSION['user_id']);		
 		if (!isset($_POST['action'])){
 			//send the session's client and user to the view
-			$data[0] = $user;
-			$data[1] =  $client;
-			$this->view('Client/index',$data);			
+			$data['user'] = $user;
+			$data['client'] =  $client;
+			$this->view('Client/index',$data);		
 		}else{
 			$client->payment_details=$_POST['payment_details'];
 			$client->address=$_POST['address'];

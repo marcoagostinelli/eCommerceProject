@@ -6,12 +6,23 @@ class Cart extends \app\core\Controller{
 
 	public function index(){
 		$cart = new \app\models\Cart();
+		$product = new \app\models\Product();
 		$myCart = $cart->getCart($_SESSION['client_id']);
+		$cartItems = []; //stores each product object in the cart
+		$grandTotal = 0; //stores the grand total of the purchase
+		foreach ($myCart as $item){
+			$currentProduct = $product->get($item->product_id);
+			array_push($cartItems, $currentProduct);
+			$grandTotal+= $currentProduct->price * $item->quantity; //multiply each product's quantity by its price
+		}
+		$data['cart'] = $myCart;
+		$data['cartProducts'] = $cartItems;
+		$data['grandTotal'] = $grandTotal;
+
 		if (!isset($_POST['action'])){
-			$this->view('Cart/index',$myCart);
+			$this->view('Cart/index',$data);
 		}else{
 			//TODO:checkout page
-			
 		}
 	}
 
@@ -34,6 +45,10 @@ class Cart extends \app\core\Controller{
 	}
 
 	public function removeFromCart($product_id){
-		//TODO: remove an item from the cart
+		$cartItem = new \app\models\Cart();
+
+		$cartItem->deleteFromCart($product_id, $_SESSION['client_id']);
+		header('location:/Cart/index');
+
 	}
 }

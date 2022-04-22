@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2022 at 12:13 AM
+-- Generation Time: Apr 23, 2022 at 12:34 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -39,8 +39,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`quantity`, `transaction_date`, `client_id`, `product_id`) VALUES
-(5, '0000-00-00', 3, 11),
-(9, '0000-00-00', 3, 18);
+(3, '0000-00-00', 3, 11),
+(3, '0000-00-00', 3, 18);
 
 -- --------------------------------------------------------
 
@@ -216,7 +216,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `seller`
