@@ -20,6 +20,7 @@
 				if (isset($_SESSION['client_id'])){ ?>
 					<li style="display: inline;padding-right:20;"><a href='/Client/index'>Client Profile</a></li>
 					<form style="display: inline;padding-right:20;" action='/Cart/index'><input  type="submit" value="My Cart"/></form>
+					<form style="display: inline;padding-right:20;" action='/Wishlist/index'><input  type="submit" value="My Wishlist ★"/></form>
 		<?php	} ?>
 		</ul>
 	</div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2022 at 12:34 AM
+-- Generation Time: Apr 24, 2022 at 02:04 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -39,8 +39,9 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`quantity`, `transaction_date`, `client_id`, `product_id`) VALUES
-(3, '0000-00-00', 3, 11),
-(3, '0000-00-00', 3, 18);
+(2, '0000-00-00', 3, 18),
+(4, '0000-00-00', 3, 21),
+(1, '0000-00-00', 3, 23);
 
 -- --------------------------------------------------------
 
@@ -109,7 +110,12 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`product_id`, `name`, `description`, `price`, `rating`, `image`, `category_name`, `seller_id`) VALUES
 (11, 'Mop', 'this mop cleans the floor', '20.99', 0, 'shoppingCart.png', 'home', 4),
-(18, 'Vacum Cleaner', 'This is a high quality vacum cleaner', '140.00', 0, '62601d96e9fa9.jpg', 'home', 4);
+(18, 'Vacum Cleaner', 'This is a high quality vacum cleaner', '140.00', 0, '62601d96e9fa9.jpg', 'home', 4),
+(20, 'TV', 'This is a tv', '190.00', 0, '626492d28a873.jpg', 'home', 4),
+(21, 'Shovel', 'A shovel used for gardening', '60.00', 0, '6264930db360f.jpg', 'garden', 4),
+(22, 'Soccer Ball', 'A soccer ball for sports', '15.00', 0, '626493316c4d9.jpg', 'sports', 4),
+(23, 'Crib', 'A baby crib', '210.00', 0, '626493436f042.jpg', 'baby', 4),
+(24, 'Desk', 'A desk for work', '110.00', 0, '62649357a50ef.jpg', 'office', 4);
 
 -- --------------------------------------------------------
 
@@ -157,6 +163,24 @@ INSERT INTO `user` (`user_id`, `username`, `password_hash`, `first_name`, `last_
 (42, 'seller', '$2y$10$d48tp/o8x94tCp0xXjHypuR8Xa3rJ5MnkNajeHABv6Nqp5rCkEv2G', 'Sam', 'Seller', 'seller'),
 (47, 'hi', '$2y$10$iIOxcWjWg/YZiN82X3a.Yu9zG5rhyVNCOaOKY5fl4I/0jUdSp4gzG', 'hi', 'hi', 'customer');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `client_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `wishlist`
+--
+
+INSERT INTO `wishlist` (`client_id`, `product_id`) VALUES
+(3, 22);
+
 --
 -- Indexes for dumped tables
 --
@@ -203,6 +227,13 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`client_id`,`product_id`),
+  ADD KEY `wishlist_productid_fk` (`product_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -216,7 +247,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `seller`
@@ -259,6 +290,13 @@ ALTER TABLE `product`
 --
 ALTER TABLE `seller`
   ADD CONSTRAINT `seller_userid_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD CONSTRAINT `wishlist_clientid_fk` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`),
+  ADD CONSTRAINT `wishlist_productid_fk` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
