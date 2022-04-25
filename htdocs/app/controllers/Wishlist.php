@@ -17,7 +17,7 @@ class Wishlist extends \app\core\Controller{
 		$data['wishlist'] = $wishlist;
 		$data['wishlistProducts'] = $wishlistItems;
 
-			$this->view('Wishlist/index',$data);
+		$this->view('Wishlist/index',$data);
 	}
 
 	public function addToWishlist($product_id){
@@ -42,6 +42,6 @@ class Wishlist extends \app\core\Controller{
 		$wishlistItem = new \app\models\Wishlist();
 
 		$wishlistItem->removeFromWishlist($product_id, $_SESSION['client_id']);
-		header('location:/Wishlist/index');		
+		header('location:/Wishlist/index');	
 	}
 }

@@ -17,11 +17,11 @@
     <table style="border-bottom: solid black; margin-bottom: 25px;">
         <tr><th>Product Id</th><th>Product name</th><th>Date</th></tr>
         <?php
-        foreach ($data as $browseHistory) {
-            echo "<tr><td>$browseHistory->product_id</td>
-            <td>$browseHistory->search</td>
-            <td>$browseHistory->date</td></tr>";
-        }
+            foreach ($data as $browseHistory) {
+                echo "<tr><td>$browseHistory->product_id</td>
+                <td>$browseHistory->search</td>
+                <td>$browseHistory->date</td></tr>";
+            }
         ?>
     </table>
     <form action='' method='post'>

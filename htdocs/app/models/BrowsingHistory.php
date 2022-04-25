@@ -15,9 +15,9 @@ class BrowsingHistory extends \app\core\Model {
     }
 
     public function insertBrowsingHistory() {
-        $SQL = "INSERT INTO browsing_history(user_id,search,date) VALUES(:user_id,:search,:date)";
+        $SQL = "INSERT INTO browsing_history(user_id,product_id,search,date) VALUES(:user_id,:product_id,:search,:date)";
         $STMT = self::$_connection->prepare($SQL);
-        $STMT->execute(['user_id'=>$this->user_id,'search'=>$this->search,'date'=>$this->date]);
+        $STMT->execute(['user_id'=>$this->user_id,'product_id'=>$this->product_id,'search'=>$this->search,'date'=>$this->date]);
     }
 
     public function clear($user_id) {

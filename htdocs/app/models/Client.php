@@ -20,6 +20,15 @@ class Client extends \app\core\Model{
 		return $STMT->fetch();
 	}	
 
+
+	function getByClientId($client_id){
+	$SQL = 'SELECT * FROM client WHERE client_id=:client_id';
+	$STMT = self::$_connection->prepare($SQL);
+	$STMT->execute(['client_id'=>$client_id]);
+	$STMT->setFetchMode(\PDO::FETCH_CLASS,"app\models\Client");
+	return $STMT->fetch();
+	}
+
 	function update(){
 		$SQL = 'UPDATE client SET payment_details = :payment_details, address = :address, picture = :picture WHERE client_id = :client_id';
 		$STMT = self::$_connection->prepare($SQL);

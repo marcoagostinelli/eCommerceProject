@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2022 at 04:37 AM
+-- Generation Time: Apr 25, 2022 at 07:31 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -20,6 +20,144 @@ SET time_zone = "+00:00";
 --
 -- Database: `project`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `browsing_history`
+--
+
+CREATE TABLE `browsing_history` (
+  `search_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `search` varchar(50) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `browsing_history`
+--
+
+INSERT INTO `browsing_history` (`search_id`, `user_id`, `product_id`, `search`, `date`) VALUES
+(6, 41, 18, 'Vacum Cleaner', '2022-04-24'),
+(7, 41, 18, 'Vacum Cleaner', '2022-04-24'),
+(8, 41, 18, 'Vacum Cleaner', '2022-04-24'),
+(9, 41, 21, 'Shovel', '2022-04-24'),
+(10, 41, 21, 'Shovel', '2022-04-24'),
+(11, 41, 22, 'Soccer Ball', '2022-04-24'),
+(12, 41, 22, 'Soccer Ball', '2022-04-24'),
+(13, 41, 21, 'Shovel', '2022-04-24'),
+(14, 41, 21, 'Shovel', '2022-04-24'),
+(15, 41, 21, 'Shovel', '2022-04-24'),
+(16, 41, 21, 'Shovel', '2022-04-24'),
+(17, 41, 21, 'Shovel', '2022-04-24'),
+(18, 41, 21, 'Shovel', '2022-04-25'),
+(19, 41, 21, 'Shovel', '2022-04-25'),
+(20, 41, 21, 'Shovel', '2022-04-25'),
+(21, 41, 21, 'Shovel', '2022-04-25'),
+(22, 41, 21, 'Shovel', '2022-04-25'),
+(23, 41, 21, 'Shovel', '2022-04-25'),
+(24, 41, 21, 'Shovel', '2022-04-25'),
+(25, 41, 21, 'Shovel', '2022-04-25'),
+(26, 41, 21, 'Shovel', '2022-04-25'),
+(27, 41, 21, 'Shovel', '2022-04-25'),
+(28, 41, 21, 'Shovel', '2022-04-25'),
+(29, 41, 21, 'Shovel', '2022-04-25'),
+(30, 41, 21, 'Shovel', '2022-04-25'),
+(31, 41, 21, 'Shovel', '2022-04-25'),
+(32, 41, 21, 'Shovel', '2022-04-25'),
+(33, 41, 21, 'Shovel', '2022-04-25'),
+(34, 41, 21, 'Shovel', '2022-04-25'),
+(35, 41, 21, 'Shovel', '2022-04-25'),
+(36, 41, 21, 'Shovel', '2022-04-25'),
+(37, 41, 21, 'Shovel', '2022-04-25'),
+(38, 41, 21, 'Shovel', '2022-04-25'),
+(39, 41, 11, 'Mop', '2022-04-25'),
+(40, 41, 21, 'Shovel', '2022-04-25'),
+(41, 41, 23, 'Crib', '2022-04-25'),
+(42, 41, 23, 'Crib', '2022-04-25'),
+(43, 41, 23, 'Crib', '2022-04-25'),
+(44, 41, 23, 'Crib', '2022-04-25'),
+(45, 41, 23, 'Crib', '2022-04-25'),
+(46, 41, 23, 'Crib', '2022-04-25'),
+(47, 41, 23, 'Crib', '2022-04-25'),
+(48, 41, 23, 'Crib', '2022-04-25'),
+(49, 41, 23, 'Crib', '2022-04-25'),
+(50, 41, 23, 'Crib', '2022-04-25'),
+(51, 41, 23, 'Crib', '2022-04-25'),
+(52, 41, 23, 'Crib', '2022-04-25'),
+(53, 41, 23, 'Crib', '2022-04-25'),
+(54, 41, 23, 'Crib', '2022-04-25'),
+(55, 41, 23, 'Crib', '2022-04-25'),
+(56, 41, 23, 'Crib', '2022-04-25'),
+(57, 41, 11, 'Mop', '2022-04-25'),
+(58, 41, 18, 'Vacum Cleaner', '2022-04-25'),
+(59, 41, 20, 'TV', '2022-04-25'),
+(60, 41, 24, 'Desk', '2022-04-25'),
+(61, 41, 22, 'Soccer Ball', '2022-04-25'),
+(62, 41, 23, 'Crib', '2022-04-25'),
+(63, 41, 21, 'Shovel', '2022-04-25'),
+(64, 41, 21, 'Shovel', '2022-04-25'),
+(65, 41, 21, 'Shovel', '2022-04-25'),
+(66, 41, 21, 'Shovel', '2022-04-25'),
+(67, 41, 21, 'Shovel', '2022-04-25'),
+(68, 41, 21, 'Shovel', '2022-04-25'),
+(69, 41, 23, 'Crib', '2022-04-25'),
+(70, 41, 21, 'Shovel', '2022-04-25'),
+(71, 41, 21, 'Shovel', '2022-04-25'),
+(72, 41, 21, 'Shovel', '2022-04-25'),
+(73, 41, 21, 'Shovel', '2022-04-25'),
+(74, 41, 21, 'Shovel', '2022-04-25'),
+(75, 41, 21, 'Shovel', '2022-04-25'),
+(76, 41, 21, 'Shovel', '2022-04-25'),
+(77, 41, 21, 'Shovel', '2022-04-25'),
+(78, 41, 21, 'Shovel', '2022-04-25'),
+(79, 41, 21, 'Shovel', '2022-04-25'),
+(80, 41, 21, 'Shovel', '2022-04-25'),
+(81, 41, 21, 'Shovel', '2022-04-25'),
+(82, 41, 21, 'Shovel', '2022-04-25'),
+(83, 53, 23, 'Crib', '2022-04-25'),
+(84, 53, 21, 'Shovel', '2022-04-25'),
+(85, 53, 11, 'Mop', '2022-04-25'),
+(86, 53, 23, 'Crib', '2022-04-25'),
+(87, 53, 23, 'Crib', '2022-04-25'),
+(88, 53, 23, 'Crib', '2022-04-25'),
+(89, 53, 23, 'Crib', '2022-04-25'),
+(90, 53, 23, 'Crib', '2022-04-25'),
+(91, 53, 22, 'Soccer Ball', '2022-04-25'),
+(92, 53, 22, 'Soccer Ball', '2022-04-25'),
+(93, 53, 18, 'Vacum Cleaner', '2022-04-25'),
+(94, 53, 18, 'Vacum Cleaner', '2022-04-25'),
+(95, 55, 23, 'Crib', '2022-04-25'),
+(96, 55, 23, 'Crib', '2022-04-25'),
+(97, 55, 23, 'Crib', '2022-04-25'),
+(98, 55, 18, 'Vacum Cleaner', '2022-04-25'),
+(99, 55, 18, 'Vacum Cleaner', '2022-04-25'),
+(100, 55, 24, 'Desk', '2022-04-25'),
+(101, 55, 22, 'Soccer Ball', '2022-04-25'),
+(102, 55, 24, 'Desk', '2022-04-25'),
+(103, 55, 24, 'Desk', '2022-04-25'),
+(104, 55, 24, 'Desk', '2022-04-25'),
+(105, 55, 22, 'Soccer Ball', '2022-04-25'),
+(106, 55, 24, 'Desk', '2022-04-25'),
+(107, 55, 24, 'Desk', '2022-04-25'),
+(108, 56, 23, 'Crib', '2022-04-25'),
+(109, 56, 23, 'Crib', '2022-04-25'),
+(110, 56, 23, 'Crib', '2022-04-25'),
+(111, 56, 21, 'Shovel', '2022-04-25'),
+(112, 56, 21, 'Shovel', '2022-04-25'),
+(113, 56, 20, 'TV', '2022-04-25'),
+(114, 56, 20, 'TV', '2022-04-25'),
+(115, 56, 22, 'Soccer Ball', '2022-04-25'),
+(116, 56, 22, 'Soccer Ball', '2022-04-25'),
+(117, 56, 11, 'Mop', '2022-04-25'),
+(118, 56, 18, 'Vacum Cleaner', '2022-04-25'),
+(119, 56, 21, 'Shovel', '2022-04-25'),
+(120, 56, 23, 'Crib', '2022-04-25'),
+(121, 56, 20, 'TV', '2022-04-25'),
+(122, 56, 18, 'Vacum Cleaner', '2022-04-25'),
+(123, 56, 18, 'Vacum Cleaner', '2022-04-25');
 
 -- --------------------------------------------------------
 
@@ -74,8 +212,10 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`client_id`, `payment_details`, `address`, `picture`, `user_id`) VALUES
-(2, '56756756', '75675675675675', 'default.jpg', 40),
-(3, '54443211', '44455 main street', '6234c71d559aa.png', 41);
+(3, '54443211', '44455 main street', '6234c71d559aa.png', 41),
+(8, '4455 2221 3444 5555', '123 Park Street', '62662cc84777b.jpg', 53),
+(9, '1111 2222 3333 4444', '12312314 street', '62662dc98378f.jpg', 55),
+(10, '22334 54542 5252 ', '24234 1st Avenue', 'default.jpg', 56);
 
 -- --------------------------------------------------------
 
@@ -129,6 +269,37 @@ INSERT INTO `product` (`product_id`, `name`, `description`, `price`, `rating`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `review_id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `client_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`review_id`, `message`, `product_id`, `client_id`) VALUES
+(1, 'hello', 21, 3),
+(2, 'This was the best crib I ever bought!', 23, 8),
+(3, 'I like this soccer ball', 22, 8),
+(4, 'I did not like this vacum cleaner', 18, 8),
+(5, 'This crib could have been better', 23, 9),
+(6, 'It is good', 18, 9),
+(7, 'I like this office desk', 24, 9),
+(8, 'Good crib', 23, 10),
+(9, 'Very useful shovel', 21, 10),
+(10, 'My Favourite tv', 20, 10),
+(11, 'High quality ball', 22, 10),
+(12, 'Cheap vacum cleaner', 18, 10);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `seller`
 --
 
@@ -167,10 +338,12 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `username`, `password_hash`, `first_name`, `last_name`, `role`) VALUES
 (23, 'sell', '$2y$10$I5PmeH2XiHKYI2isXdvA5.1MJzae//p857uWERqXPVhZT8H7KrS9q', 'seller', 'store', 'seller'),
 (26, 'new', '$2y$10$IrdCK7YhyqY.ElMizM9dbu8THASGru.omDq0Z2fRH67jJDLOFSzse', 'n', 'n', 'seller'),
-(40, 'ni', '$2y$10$YGbku7x3hHIJLEWZiiqmDOWsNimAtz6a3MQ5QX02igYQ4UokD1eY6', 'ni', 'ni', 'customer'),
 (41, 'customer', '$2y$10$E1asxwa8Ka8ZimacXy1REONSjRi7TwWvahIIhQus/ttLFcQ4vz6au', 'cust', 'customer', 'customer'),
 (42, 'seller', '$2y$10$d48tp/o8x94tCp0xXjHypuR8Xa3rJ5MnkNajeHABv6Nqp5rCkEv2G', 'Sam', 'Seller', 'seller'),
-(47, 'hi', '$2y$10$iIOxcWjWg/YZiN82X3a.Yu9zG5rhyVNCOaOKY5fl4I/0jUdSp4gzG', 'hi', 'hi', 'customer');
+(47, 'hi', '$2y$10$iIOxcWjWg/YZiN82X3a.Yu9zG5rhyVNCOaOKY5fl4I/0jUdSp4gzG', 'hi', 'hi', 'customer'),
+(53, 'johnny123', '$2y$10$qRqYzTeMxahEJnGGYNoMp.JoEoUHC9fxnL7oEeG2y21gQp7DAcEqy', 'Johnny', 'Smith', 'customer'),
+(55, 'mary123', '$2y$10$W1qCHjfhd0vzaQnrQi03XOv0QwuPFgm/BRJh91vbjcL0g4LxuMiHu', 'Mary', 'Johnson', 'customer'),
+(56, 'Peter123', '$2y$10$bSYy98gWaxUUhdwyzrPN8u8AELn79f5amiRm6RKzBJXmypftpTFlW', 'Peter', 'Richard', 'customer');
 
 -- --------------------------------------------------------
 
@@ -193,6 +366,14 @@ INSERT INTO `wishlist` (`client_id`, `product_id`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `browsing_history`
+--
+ALTER TABLE `browsing_history`
+  ADD PRIMARY KEY (`search_id`),
+  ADD KEY `history_productid_fk` (`product_id`),
+  ADD KEY `history_userid_fk` (`user_id`);
 
 --
 -- Indexes for table `cart`
@@ -230,6 +411,14 @@ ALTER TABLE `product`
   ADD KEY `product_category_fk` (`category_name`);
 
 --
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`review_id`),
+  ADD KEY `review_productid_fk` (`product_id`),
+  ADD KEY `review_clientid_fk` (`client_id`);
+
+--
 -- Indexes for table `seller`
 --
 ALTER TABLE `seller`
@@ -254,10 +443,16 @@ ALTER TABLE `wishlist`
 --
 
 --
+-- AUTO_INCREMENT for table `browsing_history`
+--
+ALTER TABLE `browsing_history`
+  MODIFY `search_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+
+--
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -272,6 +467,12 @@ ALTER TABLE `product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `seller`
 --
 ALTER TABLE `seller`
@@ -281,11 +482,18 @@ ALTER TABLE `seller`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `browsing_history`
+--
+ALTER TABLE `browsing_history`
+  ADD CONSTRAINT `history_productid_fk` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
+  ADD CONSTRAINT `history_userid_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
 --
 -- Constraints for table `cart`
@@ -312,6 +520,13 @@ ALTER TABLE `orders`
 ALTER TABLE `product`
   ADD CONSTRAINT `product_category_fk` FOREIGN KEY (`category_name`) REFERENCES `category` (`name`),
   ADD CONSTRAINT `product_sellerid_fk` FOREIGN KEY (`seller_id`) REFERENCES `seller` (`seller_id`);
+
+--
+-- Constraints for table `review`
+--
+ALTER TABLE `review`
+  ADD CONSTRAINT `review_clientid_fk` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`),
+  ADD CONSTRAINT `review_productid_fk` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
 
 --
 -- Constraints for table `seller`

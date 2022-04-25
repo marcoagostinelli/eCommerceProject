@@ -8,7 +8,7 @@ class Product extends \app\core\Controller{
 		$product = new \app\models\Product();
 		$products = $product->getAllMyProducts();
 		if (!isset($_POST['action'])){
-		$this->view('Product/index',$products);			
+			$this->view('Product/index',$products);			
 		}else{
 			header('location:/Product/create');
 		}
@@ -50,19 +50,44 @@ class Product extends \app\core\Controller{
 	}	
 
 	public function details($product_id){
-		$product = new \app\models\Product();		
+		$product = new \app\models\Product();
+		$review = new \app\models\Review();
+		$client = new \app\models\Client();
+		$user = new \app\models\User();
 		if (!isset($_POST['action'])){
 			$product = $product->get($product_id);
-            //Add browsing history
-            $browse = new \app\models\BrowsingHistory();
-            $browse->search_id = $_SESSION['user_id'];
-            $browse->user_id = $_SESSION['user_id'];
-            $browse->product_id = $product->product_id;
-            $browse->search = $product->name;
-            date_default_timezone_set("America/New_York");
-            $browse->date = date("Y-m-d h:i:sa");
-            $browse->insertBrowsingHistory();
-            $this->view('Product/details',$product);			
+			$reviews = [];
+			foreach ($review->getReviewsForProduct($product_id) as $post) {
+				array_push($reviews,$post );
+			}
+			if (isset($_SESSION['user_id'])){
+            	//Add browsing history
+            	$browse = new \app\models\BrowsingHistory();
+            	$browse->user_id = $_SESSION['user_id'];
+            	$browse->product_id = $product->product_id;
+            	$browse->search = $product->name;
+            	date_default_timezone_set("America/New_York");
+            	$browse->date = date("Y-m-d h:i:sa");
+            	$browse->insertBrowsingHistory();
+			}
+			$data['product'] = $product;
+			$data['reviews'] = $reviews;
+			//the info on every client that left a review for this product
+			$clientList = [];
+			$userList = [];
+			if (isset($reviews[0])){
+				//if there are reviews for this product
+				foreach ($reviews as $post){
+					$currentClient = $client->getByClientId($post->client_id);
+					array_push($clientList,$currentClient);
+					array_push($userList, $user->getByUserId($currentClient->user_id));
+				}				
+			}
+
+			$data['clientInfo'] = $clientList;
+			$data['userInfo'] = $userList;
+
+            $this->view('Product/details',$data);			
 		}else{
 			//send the product id and quantity to addToCart	
 			header("location:/Cart/addToCart"."/" . $product_id ."/". $_POST['quantity']);

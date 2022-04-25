@@ -13,6 +13,14 @@ class User extends \app\core\Model{
 		$STMT->setFetchMode(\PDO::FETCH_CLASS,"app\models\User");
 		return $STMT->fetch();
 	}
+	function getByUserId($user_id){
+		$SQL = 'SELECT * FROM user WHERE user_id=:user_id';
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_id'=>$user_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS,"app\models\User");
+		return $STMT->fetch();
+	}
+
 	function getRole($user_id){
 		$SQL = 'SELECT role FROM user WHERE user_id=:user_id';
 		$STMT = self::$_connection->prepare($SQL);
@@ -20,6 +28,7 @@ class User extends \app\core\Model{
 		$STMT->setFetchMode(\PDO::FETCH_CLASS,"app\models\User");
 		return $STMT->fetch();
 	}
+
 	function insert(){
 		$SQL = 'INSERT INTO user(username,password_hash,first_name,last_name,role) VALUES(:username,:password_hash,:first_name,
 			:last_name,:role)';
@@ -27,6 +36,7 @@ class User extends \app\core\Model{
 		$STMT->execute(['username'=>$this->username,'password_hash'=>$this->password_hash,'first_name'=>$this->first_name,
 			'last_name'=>$this->last_name,'role'=>$this->role]);
 	}
+
 	function exists(){
 		return $this->get($this->username) != false;
 	}
