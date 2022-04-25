@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace app\controllers;
 
 class User extends \app\core\Controller{
@@ -63,25 +63,35 @@ class User extends \app\core\Controller{
 				 $newUser = $newUser->get($_POST['username']);
 
 				 //check for client or seller:
+				 //also checks if the users first and last name passed validation
+				 if (isset($newUser->first_name) && isset($newUser->last_name)){
 
-				 if ($_POST['role']=="seller"){
-				 	$newSeller = new \app\models\Seller();
-				 	$newSeller->user_id = $newUser->user_id;
-				 	$newSeller->insert();
+					 if ($_POST['role']=="seller"){
+					 	$newSeller = new \app\models\Seller();
+					 	$newSeller->user_id = $newUser->user_id;
+					 	$newSeller->insert();
+					 	header('location:/User/index');					 	
+					 }else{
+					 	//if the user selects client, then the additional fields must be filled
+					 	//validation gets appied
+					 	if (preg_match("/^[0-9]*$/",$_POST['payment_details']) && $_POST['address'] != "" ){
+					 	$newClient = new \app\models\Client();
+					 	$newClient->user_id = $newUser->user_id;
+					 	$newClient->payment_details = $_POST['payment_details'];
+					 	$newClient->address = $_POST['address'];
+						$newClient->insert();	
+					 	header('location:/User/index');	
+					 							 		
+					 }else{
+					 	$newUser->delete($newUser->user_id);			 	
+					 	$this->view('User/register','Please complete all fields correctly');
+					 	}
+					 }				 	
 				 }else{
-				 	//if the user selects client, then the additional fields must be filled
-				 	if ($_POST['payment_details'] != "" && $_POST['address'] != ""){
-				 	$newClient = new \app\models\Client();
-				 	$newClient->user_id = $newUser->user_id;
-				 	$newClient->payment_details = $_POST['payment_details'];
-				 	$newClient->address = $_POST['address'];
-					$newClient->insert();	
-				 	header('location:/User/index');						 		
-				 }else{
-				 	$newUser->delete($newUser->user_id);			 	
-				 	$this->view('User/register','Please complete all fields');
-				 	}
+					$this->view('User/register','Please complete all fields correctly*');				 	
 				 }
+
+
 
 
 			}else{

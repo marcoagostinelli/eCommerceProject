@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2022 at 07:31 AM
+-- Generation Time: Apr 25, 2022 at 08:45 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -157,7 +157,21 @@ INSERT INTO `browsing_history` (`search_id`, `user_id`, `product_id`, `search`, 
 (120, 56, 23, 'Crib', '2022-04-25'),
 (121, 56, 20, 'TV', '2022-04-25'),
 (122, 56, 18, 'Vacum Cleaner', '2022-04-25'),
-(123, 56, 18, 'Vacum Cleaner', '2022-04-25');
+(123, 56, 18, 'Vacum Cleaner', '2022-04-25'),
+(124, 41, 21, 'Shovel', '2022-04-25'),
+(125, 41, 11, 'Mop', '2022-04-25'),
+(126, 41, 24, 'Desk', '2022-04-25'),
+(127, 41, 22, 'Soccer Ball', '2022-04-25'),
+(128, 41, 22, 'Soccer Ball', '2022-04-25'),
+(129, 41, 22, 'Soccer Ball', '2022-04-25'),
+(130, 41, 21, 'Shovel', '2022-04-25'),
+(131, 41, 23, 'Crib', '2022-04-25'),
+(132, 41, 23, 'Crib', '2022-04-25'),
+(133, 41, 23, 'Crib', '2022-04-25'),
+(134, 41, 23, 'Crib', '2022-04-25'),
+(135, 41, 23, 'Crib', '2022-04-25'),
+(136, 41, 23, 'Crib', '2022-04-25'),
+(137, 41, 23, 'Crib', '2022-04-25');
 
 -- --------------------------------------------------------
 
@@ -234,7 +248,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `client_id`, `transaction_date`) VALUES
-(17, 3, 1650854025);
+(17, 3, 1650854025),
+(18, 3, 1650902759);
 
 -- --------------------------------------------------------
 
@@ -295,7 +310,8 @@ INSERT INTO `review` (`review_id`, `message`, `product_id`, `client_id`) VALUES
 (9, 'Very useful shovel', 21, 10),
 (10, 'My Favourite tv', 20, 10),
 (11, 'High quality ball', 22, 10),
-(12, 'Cheap vacum cleaner', 18, 10);
+(12, 'Cheap vacum cleaner', 18, 10),
+(13, 'this is a good soccerball', 22, 3);
 
 -- --------------------------------------------------------
 
@@ -355,13 +371,6 @@ CREATE TABLE `wishlist` (
   `client_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `wishlist`
---
-
-INSERT INTO `wishlist` (`client_id`, `product_id`) VALUES
-(3, 22);
 
 --
 -- Indexes for dumped tables
@@ -446,43 +455,43 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT for table `browsing_history`
 --
 ALTER TABLE `browsing_history`
-  MODIFY `search_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+  MODIFY `search_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `seller`
 --
 ALTER TABLE `seller`
-  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- Constraints for dumped tables

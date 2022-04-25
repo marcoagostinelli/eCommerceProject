@@ -26,6 +26,8 @@ class Product extends \app\core\Controller{
 			
 			if ($filename !=false){
 				$newProduct->image=$filename;
+			}else{
+				$newProduct->image= "shoppingCart.png";
 			}
 
 			$newProduct->name = $_POST['name'];

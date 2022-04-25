@@ -2,6 +2,16 @@
 namespace app\models;
 
 class Product extends \app\core\Model{
+
+	#[\app\validation\NonBlankString]
+	var $name;
+	#[\app\validation\NonBlankString]
+	var $description;
+
+	#[\app\validation\NonBlankString]
+	//since price is being entered in a number box, it only needs to be checked for nonBlank
+	var $price;
+
 	function __construct(){
 		parent::__construct();
 	}
@@ -36,11 +46,14 @@ class Product extends \app\core\Model{
 		return $STMT->fetchAll();		
 	}
 	function insert(){
-		$SQL = 'INSERT INTO product(name,description,price,category_name,image,seller_id) VALUES(:name,
-				:description,:price,:category_name,:image,:seller_id)';
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['name'=>$this->name,'description'=>$this->description,'price'=>$this->price,
-							'category_name'=>$this->category_name,'image'=>$this->image,'seller_id'=>$this->seller_id]);
+		if ($this->isValid()){
+			$SQL = 'INSERT INTO product(name,description,price,category_name,image,seller_id) VALUES(:name,
+					:description,:price,:category_name,:image,:seller_id)';
+			$STMT = self::$_connection->prepare($SQL);
+			$STMT->execute(['name'=>$this->name,'description'=>$this->description,'price'=>$this->price,
+								'category_name'=>$this->category_name,'image'=>$this->image,'seller_id'=>$this->seller_id]);			
+		}
+
 	}
 	public function delete($product_id){
 		$SQL = 'DELETE FROM product WHERE product_id = :product_id';
