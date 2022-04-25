@@ -13,9 +13,10 @@
 		<?php if (isset($_SESSION['user_id'])){
 			
 			 if ($_SESSION['role']=="seller"){ ?>
-			
-			<a href='/Product/index'>My Products</a><br>
-			<a href='/BrowsingHistory/index'>My Browsing History</a><br><br>
+				<a href='/Product/index'>My Products</a><br><br>
+
+            		<?php } else if ($_SESSION['role']=="customer") { ?>
+				<a href='/BrowsingHistory/index'>My Browsing History</a><br><br>
 			
 	<?php	} 
 		}
