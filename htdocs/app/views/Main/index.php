@@ -14,7 +14,8 @@
 			
 			 if ($_SESSION['role']=="seller"){ ?>
 			
-			<a href='/Product/index'>My Products</a><br><br>
+			<a href='/Product/index'>My Products</a><br>
+			<a href='/BrowsingHistory/index'>My Browsing History</a><br><br>
 			
 	<?php	} 
 		}

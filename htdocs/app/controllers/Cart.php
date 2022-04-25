@@ -22,7 +22,13 @@ class Cart extends \app\core\Controller{
 		if (!isset($_POST['action'])){
 			$this->view('Cart/index',$data);
 		}else{
-			//TODO:checkout page
+			if ($grandTotal != 0){
+				//cannot checkout with nothing in cart
+				header('location:/Orders/index/'. $grandTotal);
+			}else{
+				$this->view('Cart/index',$data);
+			}
+
 		}
 	}
 

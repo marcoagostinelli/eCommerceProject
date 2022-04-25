@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2022 at 02:04 AM
+-- Generation Time: Apr 25, 2022 at 04:37 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -29,19 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cart` (
   `quantity` int(10) NOT NULL,
-  `transaction_date` date NOT NULL,
   `client_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`quantity`, `transaction_date`, `client_id`, `product_id`) VALUES
-(2, '0000-00-00', 3, 18),
-(4, '0000-00-00', 3, 21),
-(1, '0000-00-00', 3, 23);
 
 -- --------------------------------------------------------
 
@@ -86,6 +76,25 @@ CREATE TABLE `client` (
 INSERT INTO `client` (`client_id`, `payment_details`, `address`, `picture`, `user_id`) VALUES
 (2, '56756756', '75675675675675', 'default.jpg', 40),
 (3, '54443211', '44455 main street', '6234c71d559aa.png', 41);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL,
+  `client_id` int(11) NOT NULL,
+  `transaction_date` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `client_id`, `transaction_date`) VALUES
+(17, 3, 1650854025);
 
 -- --------------------------------------------------------
 
@@ -206,6 +215,13 @@ ALTER TABLE `client`
   ADD KEY `client_userid_fk` (`user_id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `orders_clientid_fk` (`client_id`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -244,6 +260,12 @@ ALTER TABLE `client`
   MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
@@ -277,6 +299,12 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `client`
   ADD CONSTRAINT `client_userid_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_clientid_fk` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`);
 
 --
 -- Constraints for table `product`

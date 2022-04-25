@@ -53,7 +53,16 @@ class Product extends \app\core\Controller{
 		$product = new \app\models\Product();		
 		if (!isset($_POST['action'])){
 			$product = $product->get($product_id);
-			$this->view('Product/details',$product);			
+            //Add browsing history
+            $browse = new \app\models\BrowsingHistory();
+            $browse->search_id = $_SESSION['user_id'];
+            $browse->user_id = $_SESSION['user_id'];
+            $browse->product_id = $product->product_id;
+            $browse->search = $product->name;
+            date_default_timezone_set("America/New_York");
+            $browse->date = date("Y-m-d h:i:sa");
+            $browse->insertBrowsingHistory();
+            $this->view('Product/details',$product);			
 		}else{
 			//send the product id and quantity to addToCart	
 			header("location:/Cart/addToCart"."/" . $product_id ."/". $_POST['quantity']);

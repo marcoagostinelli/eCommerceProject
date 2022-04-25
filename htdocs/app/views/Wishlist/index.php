@@ -17,7 +17,6 @@
 		<table style="border-bottom: solid black; margin-bottom: 25px;">
 			<tr><th></th><th>Product Name</th><th>Each</th></tr>
 		<?php
-			$grandTotal = 0;
 			for ($i = 0; $i < count($data['wishlist']); $i++) {
 				//set the current wishlist item and product
 				$wishlistItem = $data['wishlist'][$i];
