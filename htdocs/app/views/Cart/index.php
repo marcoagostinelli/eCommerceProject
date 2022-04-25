@@ -6,16 +6,16 @@
 	th {padding-right: 100px;}
 	td {padding-right: 100px; padding-bottom: 50px;text-align: center;}
 </style>
-	<title>My Cart</title>
+	<title><?= _("My Cart") ?></title>
 </head>
 <body>
 	<div class='container' style='margin-top: 3px;'>
 		<?php $this->view('shared/menu_bar');?>
 
-		<h1>My Cart</h1><br>
+		<h1><?= _("My Cart") ?></h1><br>
 		
 		<table style="border-bottom: solid black; margin-bottom: 25px;">
-			<tr><th></th><th>Product Name</th><th>Each</th><th>Quantity</th><th>Total</th></tr>
+			<tr><th></th><th><?= _("Product Name") ?></th><th><?= _("Each") ?></th><th><?= _("Quantity") ?></th><th><?= _("Total") ?></th></tr>
 		<?php
 			$grandTotal = 0;
 			for ($i = 0; $i < count($data['cart']); $i++) {
@@ -27,18 +27,18 @@
 				$grandTotal+= $productTotal;
 
 				echo "<tr><td><img src='/pictures/$product->image' height='80' width='80' /></td>
-				<td>$product->name</td>
-				<td>$$product->price</td>
-				<td>$cartItem->quantity</td>
-				<td>$$productTotal</td>
-				<td><button><a style='text-decoration: none;color: black;' href='/Cart/removeFromCart/$product->product_id'>Remove</a></button></td>
+				<td>" . _($product->name) ."</td>
+				<td>$" . _($product->price) ."</td>
+				<td>" . _($cartItem->quantity) ."</td>
+				<td>$" . _($productTotal) ."</td>
+				<td><button><a style='text-decoration: none;color: black;' href='/Cart/removeFromCart/$product->product_id'>" . _("Remove") ."</a></button></td>
 				";
 			}
 		?>
 		</table>
-		<h4>Grand Total</h4>
+		<h4><?= _("Grand Total") ?></h4>
 		<form action='' method='post'>
-			<p>$<?= $data['grandTotal'] ?> <input type="submit" name = action value="Proceed to Checkout"/></p>
+			<p>$<?= _($data['grandTotal']) ?> <input type="submit" name = action value="<?= _('Proceed to Checkout') ?>"/></p>
 		</form>
 	</div>
 </body>

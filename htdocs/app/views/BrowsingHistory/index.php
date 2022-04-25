@@ -6,26 +6,26 @@
         th {padding-right: 100px;}
         td {padding-right: 100px; padding-bottom: 50px;text-align: center;}
     </style>
-    <title>Browsing History</title>
+    <title><?= _("Browsing History") ?></title>
 </head>
 <body>
 <div class='container' style='margin-top: 3px;'>
     <?php $this->view('shared/menu_bar');?>
 
-    <h1>My Browsing History</h1><br>
+    <h1><?= _("My Browsing History") ?></h1><br>
 
     <table style="border-bottom: solid black; margin-bottom: 25px;">
-        <tr><th>Product Id</th><th>Product name</th><th>Date</th></tr>
+        <tr><th><?= _("Product Id") ?></th><th><?= _("Product name") ?></th><th><?= _("Date") ?></th></tr>
         <?php
             foreach ($data as $browseHistory) {
-                echo "<tr><td>$browseHistory->product_id</td>
-                <td>$browseHistory->search</td>
-                <td>$browseHistory->date</td></tr>";
+                echo "<tr><td>" . _("$browseHistory->product_id") . "</td>
+                <td>" . _("$browseHistory->search") . "</td>
+                <td>" . _("$browseHistory->date") . "</td></tr>";
             }
         ?>
     </table>
     <form action='' method='post'>
-        <input type="submit" name='action' value="Clear History"/>
+        <input type="submit" name='action' value="<?= _('Clear History') ?>"/>
     </form>
 </div>
 </body>

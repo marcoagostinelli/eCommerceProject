@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2022 at 08:45 PM
+-- Generation Time: Apr 26, 2022 at 01:41 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -171,7 +171,18 @@ INSERT INTO `browsing_history` (`search_id`, `user_id`, `product_id`, `search`, 
 (134, 41, 23, 'Crib', '2022-04-25'),
 (135, 41, 23, 'Crib', '2022-04-25'),
 (136, 41, 23, 'Crib', '2022-04-25'),
-(137, 41, 23, 'Crib', '2022-04-25');
+(137, 41, 23, 'Crib', '2022-04-25'),
+(139, 41, 11, 'Mop', '2022-04-25'),
+(140, 42, 21, 'Shovel', '2022-04-25'),
+(141, 42, 21, 'Shovel', '2022-04-25'),
+(142, 42, 21, 'Shovel', '2022-04-25'),
+(143, 42, 21, 'Shovel', '2022-04-25'),
+(144, 42, 21, 'Shovel', '2022-04-25'),
+(145, 42, 21, 'Shovel', '2022-04-25'),
+(146, 42, 21, 'Shovel', '2022-04-25'),
+(147, 41, 23, 'Crib', '2022-04-25'),
+(148, 41, 21, 'Shovel', '2022-04-25'),
+(149, 41, 11, 'Mop', '2022-04-25');
 
 -- --------------------------------------------------------
 
@@ -249,7 +260,10 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`order_id`, `client_id`, `transaction_date`) VALUES
 (17, 3, 1650854025),
-(18, 3, 1650902759);
+(18, 3, 1650902759),
+(19, 3, 1650917728),
+(21, 3, 1650926150),
+(22, 3, 1650929936);
 
 -- --------------------------------------------------------
 
@@ -455,7 +469,7 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT for table `browsing_history`
 --
 ALTER TABLE `browsing_history`
-  MODIFY `search_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `search_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
 -- AUTO_INCREMENT for table `client`
@@ -467,7 +481,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `product`

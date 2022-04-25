@@ -6,16 +6,16 @@
 	th {padding-right: 100px;}
 	td {padding-right: 100px; padding-bottom: 50px;text-align: center;}
 </style>
-	<title>My Wishlist</title>
+	<title><?= _("My Wishlist") ?></title>
 </head>
 <body>
 	<div class='container' style='margin-top: 3px;'>
 		<?php $this->view('shared/menu_bar');?>
 
-		<h1>My Wishlist</h1><br>
+		<h1><?= _("My Wishlist") ?></h1><br>
 		
 		<table style="border-bottom: solid black; margin-bottom: 25px;">
-			<tr><th></th><th>Product Name</th><th>Each</th></tr>
+			<tr><th></th><th><?= _("Product Name") ?></th><th><?= _("Each") ?></th></tr>
 		<?php
 			for ($i = 0; $i < count($data['wishlist']); $i++) {
 				//set the current wishlist item and product
@@ -23,9 +23,9 @@
 				$product = $data['wishlistProducts'][$i];
 
 				echo "<tr><td><img src='/pictures/$product->image' height='80' width='80' /></td>
-				<td>$product->name</td>
-				<td>$$product->price</td>
-				<td><button><a style='text-decoration: none;color: black;' href='/Wishlist/removeFromWishlist/$product->product_id'>Remove</a></button></td>
+				<td>" . _($product->name) . "</td>
+				<td>$" . _($product->price) . "</td>
+				<td><button><a style='text-decoration: none;color: black;' href='/Wishlist/removeFromWishlist/$product->product_id'>" . _('Remove') . "</a></button></td>
 				";
 			}
 		?>

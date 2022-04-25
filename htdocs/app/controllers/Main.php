@@ -9,14 +9,14 @@ class Main extends \app\core\Controller{
 		$categories = new \app\models\Category();
 		$data['categories'] = $categories->getAll();// this is done so that all categories get displayed
 
-		if ($_SESSION!= null){ //if user is signed in
+		if (!isset($_SESSION)){ //if user is signed in
 			if (isset($_SESSION['client_id'])){
 				$client = new \app\models\Client();
 				$client = $client->get($_SESSION['user_id']);
 				$data['role']=$client;
 			}else{
 				$seller = new \app\models\Seller();
-				$seller = $seller->get($_SESSION['username']);
+				$seller = $seller->get($_SESSION['user_id']);
 				$data['role']=$seller;
 			}			
 		}else{
