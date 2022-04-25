@@ -25,4 +25,10 @@ class BrowsingHistory extends \app\core\Model {
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute(['user_id'=>$user_id]);
     }
+    
+    public function delete($product_id) {
+        $SQL = 'DELETE FROM browsing_history WHERE product_id = :product_id';
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['product_id'=>$product_id]);
+    }
 }
