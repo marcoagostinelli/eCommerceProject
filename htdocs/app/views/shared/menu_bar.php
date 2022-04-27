@@ -15,6 +15,12 @@
 			<?php } ?>
 
 			<li style="display: inline;padding-right:20;"><a href='/Main/index'><?= _("Main Page") ?></a></li>
+			<?php
+				global $localizations;
+				foreach ($localizations as $locale) {
+					echo "<a style='display: inline;padding-right:20;text-decoration: none;color:black;' href='?lang=$locale'>".\Locale::getDisplayName($locale, $locale).'</a>';
+				}
+			?>
 
 			<?php //display client profile only if user is a client
 				if (isset($_SESSION['client_id'])){ ?>
