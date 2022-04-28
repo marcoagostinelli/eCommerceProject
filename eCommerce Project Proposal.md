@@ -21,9 +21,9 @@ Marco's features:
 
 Arshjit's features:
 
-1. Seller: view how much of each product has been sold
+1. Seller: update your product quantity
 2. Seller: view how much inventory is left for a product
-3. User: leave a rating on a product [^2]
+3. User: Remove a product from cart
 4. User: input payment details
 5. User: input shipping details
 6. User: filtering products [^3]
@@ -31,7 +31,6 @@ Arshjit's features:
 8. User: clear browsing history
 9. User: view reviews posted by other clients
 10. User: remove products from wish list[^5]
-[^2]: This should be only for those products that were purchased.
 [^3]: In order to track a delivery a seller must have shipped a product and entered the delivery information. This should be a story as well.
 [^5]: Usually, if you can add to the wish list, then you should be able to remove from it as well.
 
