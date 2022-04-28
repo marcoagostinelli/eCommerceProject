@@ -47,12 +47,19 @@ class Product extends \app\core\Model{
 	}
 	function insert(){
 		if ($this->isValid()){
-			$SQL = 'INSERT INTO product(name,description,price,category_name,image,seller_id) VALUES(:name,
-					:description,:price,:category_name,:image,:seller_id)';
+			$SQL = 'INSERT INTO product(name,description,price,category_name,image,quantity,seller_id) VALUES(:name,
+					:description,:price,:category_name,:image,:quantity,:seller_id)';
 			$STMT = self::$_connection->prepare($SQL);
 			$STMT->execute(['name'=>$this->name,'description'=>$this->description,'price'=>$this->price,
-								'category_name'=>$this->category_name,'image'=>$this->image,'seller_id'=>$this->seller_id]);			
+				'category_name'=>$this->category_name,'image'=>$this->image,'quantity'=>$this->quantity,'seller_id'=>$this->seller_id]);		
 		}
+
+	}
+
+	function updateQuantity(){
+		$SQL = 'UPDATE product SET quantity = :quantity WHERE product_id = :product_id';
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['quantity'=>$this->quantity,'product_id'=>$this->product_id]);
 
 	}
 	public function delete($product_id){

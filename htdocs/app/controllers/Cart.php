@@ -34,7 +34,12 @@ class Cart extends \app\core\Controller{
 
 	public function addToCart($product_id,$quantity){
 		$newCart = new \app\models\Cart();
+		$product = new \app\models\Product();
+		$product = $product->get($product_id);
 		$cartItem = $newCart->getCartItem($product_id,$_SESSION['client_id']);
+		$product->quantity = $product->quantity - $quantity;
+		//subtract the quantity
+		$product->updateQuantity();
 		//check if item is already in cart
 		if ($cartItem == false){
 			$newCart->client_id = $_SESSION['client_id'];
@@ -52,6 +57,14 @@ class Cart extends \app\core\Controller{
 
 	public function removeFromCart($product_id){
 		$cartItem = new \app\models\Cart();
+		$cartItem = $cartItem->getCartItem($product_id,$_SESSION['client_id']);		
+		$product = new \app\models\Product();
+		$product= $product->get($product_id);
+
+		$product->quantity = $product->quantity + $cartItem->quantity;
+		$product->updateQuantity();
+		//put the items the client never ordered back in stock
+
 
 		$cartItem->deleteFromCart($product_id, $_SESSION['client_id']);
 		header('location:/Cart/index');

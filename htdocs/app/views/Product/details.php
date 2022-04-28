@@ -14,6 +14,7 @@
 		<form action='' method='post'>
 			<input style="float:left; margin-right:20px" type="number" name="quantity" value=1 min="1" max="5">
 			<label><input style="float:right;" type="submit" name='action' value='<?= _("Add to Cart") ?>' class='form-control'></label>
+			<p style='color:red'><?= $data['error'] ?></p>
 		</form>
 		<form action="/Wishlist/addToWishlist/<?php echo $data['product']->product_id ?>"><label><input style="float:right;" type="submit" name='action' value=' <?= _("Add to Wishlist") ?>' class='form-control'></label></form>
 
@@ -21,6 +22,7 @@
 		
 		<div style="border-top:1px solid";><br>
 			<p><?php echo _($data['product']->description)?><p><br>
+			<p><?php echo  _($data['product']->quantity) . _(" Products Remain in Stock")?> <p><br>
 			<p><?php echo _("Rating: "). _($data['product']->rating) . "/5"?><p>
 		</div>
 		<div style="border-top:1px solid;"><br>

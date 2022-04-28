@@ -34,12 +34,32 @@ class Product extends \app\core\Controller{
 			$newProduct->description = $_POST['description'];
 			$newProduct->price = $_POST['price'];
 			$newProduct->category_name = $_POST['category_name'];
+			$newProduct->quantity = $_POST['quantity'];
 			$newProduct->seller_id = $_SESSION['seller_id'];
 			$newProduct->insert();
 			header('location:/Product/index');	
 		}
 		
 	}
+
+#[\app\filters\Seller]
+	public function updateQuantity($product_id){
+		$product = new \app\models\Product();
+		$product = $product->get($product_id);
+		if (!isset($_POST['action'])){
+			$this->view('Product/UpdateQuantity',$product);
+		}else{
+			if ($product->seller_id == $_SESSION['seller_id']){
+				//make sure only the seller can modify their product
+				$product->quantity = $_POST['quantity'];
+				$product->updateQuantity();
+				header('location:/Product/index');				
+			}else{
+				$this->view('Product/UpdateQuantity',$product);
+			}
+		}
+	}
+
 #[\app\filters\Seller]
 	public function delete($product_id){
 		$product = new \app\models\Product();
@@ -48,53 +68,63 @@ class Product extends \app\core\Controller{
 		if ($product->image != 'shoppingCart.png'){
 			unlink('pictures/' . $product->image);
 		}
-		$browse->delete($product_id);
-		$product->delete($product_id);
-		header('location:/Product/index');
+		if ($product->seller_id == $_SESSION['seller_id']){
+			$browse->delete($product_id);
+			$product->delete($product_id);
+			header('location:/Product/index');
+		}	
 	}	
 
 	public function details($product_id){
 		$product = new \app\models\Product();
+		$product = $product->get($product_id);		
 		$review = new \app\models\Review();
 		$client = new \app\models\Client();
 		$user = new \app\models\User();
+		$reviews = [];
+		foreach ($review->getReviewsForProduct($product_id) as $post) {
+			array_push($reviews,$post );
+		}
+		if (isset($_SESSION['user_id'])){
+            //Add browsing history
+            $browse = new \app\models\BrowsingHistory();
+            $browse->user_id = $_SESSION['user_id'];
+            $browse->product_id = $product->product_id;
+            $browse->search = $product->name;
+            date_default_timezone_set("America/New_York");
+            $browse->date = date("Y-m-d h:i:sa");
+            $browse->insertBrowsingHistory();
+		}
+		$data['product'] = $product;
+		$data['reviews'] = $reviews;
+		//the info on every client that left a review for this product
+		$clientList = [];
+		$userList = [];
+		if (isset($reviews[0])){
+			//if there are reviews for this product
+			foreach ($reviews as $post){
+				$currentClient = $client->getByClientId($post->client_id);
+				array_push($clientList,$currentClient);
+				array_push($userList, $user->getByUserId($currentClient->user_id));
+			}				
+		}
+
+		$data['clientInfo'] = $clientList;
+		$data['userInfo'] = $userList;
+		$data['error'] = "";
+		//$data['error'] remains empty if no error
+
 		if (!isset($_POST['action'])){
-			$product = $product->get($product_id);
-			$reviews = [];
-			foreach ($review->getReviewsForProduct($product_id) as $post) {
-				array_push($reviews,$post );
-			}
-			if (isset($_SESSION['user_id'])){
-            	//Add browsing history
-            	$browse = new \app\models\BrowsingHistory();
-            	$browse->user_id = $_SESSION['user_id'];
-            	$browse->product_id = $product->product_id;
-            	$browse->search = $product->name;
-            	date_default_timezone_set("America/New_York");
-            	$browse->date = date("Y-m-d h:i:sa");
-            	$browse->insertBrowsingHistory();
-			}
-			$data['product'] = $product;
-			$data['reviews'] = $reviews;
-			//the info on every client that left a review for this product
-			$clientList = [];
-			$userList = [];
-			if (isset($reviews[0])){
-				//if there are reviews for this product
-				foreach ($reviews as $post){
-					$currentClient = $client->getByClientId($post->client_id);
-					array_push($clientList,$currentClient);
-					array_push($userList, $user->getByUserId($currentClient->user_id));
-				}				
-			}
-
-			$data['clientInfo'] = $clientList;
-			$data['userInfo'] = $userList;
-
             $this->view('Product/details',$data);			
 		}else{
 			//send the product id and quantity to addToCart	
-			header("location:/Cart/addToCart"."/" . $product_id ."/". $_POST['quantity']);
+			if ($_POST['quantity'] <= $product->quantity){
+				header("location:/Cart/addToCart"."/" . $product_id ."/". $_POST['quantity']);				
+			}else{
+				$data['error'] = "There is not enough of this product left in stock!";
+				$this->view('Product/details',$data);
+			}
+
 		}
 	}
 

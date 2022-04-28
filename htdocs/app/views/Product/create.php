@@ -12,7 +12,8 @@
 		<form method='post' action='' enctype='multipart/form-data'>
 			<label class='form-label'><?= _("Product Name:") ?><input type='text' name='name' class='form-control' /></label><br>
 			<label class='form-label'><?= _("Description:") ?><textarea name='description' class='form-control'></textarea></label><br>
-			<label class='form-label'><?= _("Price:") ?><input step=".01" name="price" type="number" class='form-control'/></label><br>
+			<label class='form-label'><?= _("Price:") ?><input step=".01" name="price" type="number" class='form-control' min='0'/></label><br>
+			<label class='form-label'><?= _("Quantity:") ?><input step="1" name="quantity" type="number" class='form-control' min='0'/></label><br>
 			<label><?= _("Product image: ") ?><input type='file' name='productImage' class='form-control' /></label>
 			<div style="padding-top: 10px;">
 			<p><?= _("Select a Category") ?></p>

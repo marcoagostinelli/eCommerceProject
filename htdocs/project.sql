@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2022 at 01:41 AM
+-- Generation Time: Apr 28, 2022 at 05:51 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -73,7 +73,6 @@ INSERT INTO `browsing_history` (`search_id`, `user_id`, `product_id`, `search`, 
 (36, 41, 21, 'Shovel', '2022-04-25'),
 (37, 41, 21, 'Shovel', '2022-04-25'),
 (38, 41, 21, 'Shovel', '2022-04-25'),
-(39, 41, 11, 'Mop', '2022-04-25'),
 (40, 41, 21, 'Shovel', '2022-04-25'),
 (41, 41, 23, 'Crib', '2022-04-25'),
 (42, 41, 23, 'Crib', '2022-04-25'),
@@ -91,7 +90,6 @@ INSERT INTO `browsing_history` (`search_id`, `user_id`, `product_id`, `search`, 
 (54, 41, 23, 'Crib', '2022-04-25'),
 (55, 41, 23, 'Crib', '2022-04-25'),
 (56, 41, 23, 'Crib', '2022-04-25'),
-(57, 41, 11, 'Mop', '2022-04-25'),
 (58, 41, 18, 'Vacum Cleaner', '2022-04-25'),
 (59, 41, 20, 'TV', '2022-04-25'),
 (60, 41, 24, 'Desk', '2022-04-25'),
@@ -119,7 +117,6 @@ INSERT INTO `browsing_history` (`search_id`, `user_id`, `product_id`, `search`, 
 (82, 41, 21, 'Shovel', '2022-04-25'),
 (83, 53, 23, 'Crib', '2022-04-25'),
 (84, 53, 21, 'Shovel', '2022-04-25'),
-(85, 53, 11, 'Mop', '2022-04-25'),
 (86, 53, 23, 'Crib', '2022-04-25'),
 (87, 53, 23, 'Crib', '2022-04-25'),
 (88, 53, 23, 'Crib', '2022-04-25'),
@@ -151,7 +148,6 @@ INSERT INTO `browsing_history` (`search_id`, `user_id`, `product_id`, `search`, 
 (114, 56, 20, 'TV', '2022-04-25'),
 (115, 56, 22, 'Soccer Ball', '2022-04-25'),
 (116, 56, 22, 'Soccer Ball', '2022-04-25'),
-(117, 56, 11, 'Mop', '2022-04-25'),
 (118, 56, 18, 'Vacum Cleaner', '2022-04-25'),
 (119, 56, 21, 'Shovel', '2022-04-25'),
 (120, 56, 23, 'Crib', '2022-04-25'),
@@ -159,7 +155,6 @@ INSERT INTO `browsing_history` (`search_id`, `user_id`, `product_id`, `search`, 
 (122, 56, 18, 'Vacum Cleaner', '2022-04-25'),
 (123, 56, 18, 'Vacum Cleaner', '2022-04-25'),
 (124, 41, 21, 'Shovel', '2022-04-25'),
-(125, 41, 11, 'Mop', '2022-04-25'),
 (126, 41, 24, 'Desk', '2022-04-25'),
 (127, 41, 22, 'Soccer Ball', '2022-04-25'),
 (128, 41, 22, 'Soccer Ball', '2022-04-25'),
@@ -172,7 +167,6 @@ INSERT INTO `browsing_history` (`search_id`, `user_id`, `product_id`, `search`, 
 (135, 41, 23, 'Crib', '2022-04-25'),
 (136, 41, 23, 'Crib', '2022-04-25'),
 (137, 41, 23, 'Crib', '2022-04-25'),
-(139, 41, 11, 'Mop', '2022-04-25'),
 (140, 42, 21, 'Shovel', '2022-04-25'),
 (141, 42, 21, 'Shovel', '2022-04-25'),
 (142, 42, 21, 'Shovel', '2022-04-25'),
@@ -182,7 +176,32 @@ INSERT INTO `browsing_history` (`search_id`, `user_id`, `product_id`, `search`, 
 (146, 42, 21, 'Shovel', '2022-04-25'),
 (147, 41, 23, 'Crib', '2022-04-25'),
 (148, 41, 21, 'Shovel', '2022-04-25'),
-(149, 41, 11, 'Mop', '2022-04-25');
+(150, 41, 21, 'Shovel', '2022-04-27'),
+(151, 42, 23, 'Crib', '2022-04-27'),
+(152, 42, 23, 'Crib', '2022-04-27'),
+(153, 42, 23, 'Crib', '2022-04-27'),
+(154, 42, 28, 'Dog Leash', '2022-04-27'),
+(155, 42, 20, 'TV', '2022-04-27'),
+(156, 41, 23, 'Crib', '2022-04-27'),
+(157, 41, 23, 'Crib', '2022-04-27'),
+(158, 41, 24, 'Desk', '2022-04-27'),
+(159, 41, 28, 'Dog Leash', '2022-04-27'),
+(160, 41, 28, 'Dog Leash', '2022-04-27'),
+(161, 41, 28, 'Dog Leash', '2022-04-27'),
+(162, 41, 28, 'Dog Leash', '2022-04-27'),
+(163, 41, 28, 'Dog Leash', '2022-04-27'),
+(164, 41, 28, 'Dog Leash', '2022-04-27'),
+(165, 41, 28, 'Dog Leash', '2022-04-27'),
+(166, 41, 28, 'Dog Leash', '2022-04-27'),
+(167, 41, 28, 'Dog Leash', '2022-04-27'),
+(168, 41, 28, 'Dog Leash', '2022-04-27'),
+(169, 41, 28, 'Dog Leash', '2022-04-27'),
+(170, 41, 28, 'Dog Leash', '2022-04-27'),
+(171, 41, 28, 'Dog Leash', '2022-04-27'),
+(172, 41, 28, 'Dog Leash', '2022-04-27'),
+(173, 41, 28, 'Dog Leash', '2022-04-27'),
+(174, 41, 28, 'Dog Leash', '2022-04-27'),
+(175, 41, 28, 'Dog Leash', '2022-04-27');
 
 -- --------------------------------------------------------
 
@@ -254,17 +273,6 @@ CREATE TABLE `orders` (
   `transaction_date` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`order_id`, `client_id`, `transaction_date`) VALUES
-(17, 3, 1650854025),
-(18, 3, 1650902759),
-(19, 3, 1650917728),
-(21, 3, 1650926150),
-(22, 3, 1650929936);
-
 -- --------------------------------------------------------
 
 --
@@ -278,6 +286,7 @@ CREATE TABLE `product` (
   `price` decimal(10,2) NOT NULL,
   `rating` int(2) NOT NULL,
   `image` varchar(50) NOT NULL DEFAULT 'shoppingCart.png',
+  `quantity` int(11) NOT NULL,
   `category_name` varchar(100) NOT NULL,
   `seller_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -286,14 +295,14 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_id`, `name`, `description`, `price`, `rating`, `image`, `category_name`, `seller_id`) VALUES
-(11, 'Mop', 'this mop cleans the floor', '20.99', 0, 'shoppingCart.png', 'home', 4),
-(18, 'Vacum Cleaner', 'This is a high quality vacum cleaner', '140.00', 0, '62601d96e9fa9.jpg', 'home', 4),
-(20, 'TV', 'This is a tv', '190.00', 0, '626492d28a873.jpg', 'home', 4),
-(21, 'Shovel', 'A shovel used for gardening', '60.00', 0, '6264930db360f.jpg', 'garden', 4),
-(22, 'Soccer Ball', 'A soccer ball for sports', '15.00', 0, '626493316c4d9.jpg', 'sports', 4),
-(23, 'Crib', 'A baby crib', '210.00', 0, '626493436f042.jpg', 'baby', 4),
-(24, 'Desk', 'A desk for work', '110.00', 0, '62649357a50ef.jpg', 'office', 4);
+INSERT INTO `product` (`product_id`, `name`, `description`, `price`, `rating`, `image`, `quantity`, `category_name`, `seller_id`) VALUES
+(18, 'Vacum Cleaner', 'This is a high quality vacum cleaner', '140.00', 0, '62601d96e9fa9.jpg', 12, 'home', 4),
+(20, 'TV', 'This is a tv', '190.00', 0, '626492d28a873.jpg', 0, 'home', 4),
+(21, 'Shovel', 'A shovel used for gardening', '60.00', 0, '6264930db360f.jpg', 0, 'garden', 4),
+(22, 'Soccer Ball', 'A soccer ball for sports', '15.00', 0, '626493316c4d9.jpg', 0, 'sports', 4),
+(23, 'Crib', 'A baby crib', '210.00', 0, '626493436f042.jpg', 0, 'baby', 4),
+(24, 'Desk', 'A desk for work', '110.00', 0, '62649357a50ef.jpg', 0, 'office', 4),
+(28, 'Dog Leash', 'This is a 10 foot leash for a dog', '17.99', 0, 'shoppingCart.png', 33, 'pets', 4);
 
 -- --------------------------------------------------------
 
@@ -344,7 +353,8 @@ CREATE TABLE `seller` (
 
 INSERT INTO `seller` (`seller_id`, `user_id`) VALUES
 (2, 26),
-(4, 42);
+(4, 42),
+(11, 74);
 
 -- --------------------------------------------------------
 
@@ -373,7 +383,8 @@ INSERT INTO `user` (`user_id`, `username`, `password_hash`, `first_name`, `last_
 (47, 'hi', '$2y$10$iIOxcWjWg/YZiN82X3a.Yu9zG5rhyVNCOaOKY5fl4I/0jUdSp4gzG', 'hi', 'hi', 'customer'),
 (53, 'johnny123', '$2y$10$qRqYzTeMxahEJnGGYNoMp.JoEoUHC9fxnL7oEeG2y21gQp7DAcEqy', 'Johnny', 'Smith', 'customer'),
 (55, 'mary123', '$2y$10$W1qCHjfhd0vzaQnrQi03XOv0QwuPFgm/BRJh91vbjcL0g4LxuMiHu', 'Mary', 'Johnson', 'customer'),
-(56, 'Peter123', '$2y$10$bSYy98gWaxUUhdwyzrPN8u8AELn79f5amiRm6RKzBJXmypftpTFlW', 'Peter', 'Richard', 'customer');
+(56, 'Peter123', '$2y$10$bSYy98gWaxUUhdwyzrPN8u8AELn79f5amiRm6RKzBJXmypftpTFlW', 'Peter', 'Richard', 'customer'),
+(74, 'test123', '$2y$10$BHvoproHHyKoP2fb5lBwAefNmgj4BrdcpSHB2ZWVUzZnPVFSzG5yy', 'Joe', 'Smith', 'seller');
 
 -- --------------------------------------------------------
 
@@ -469,7 +480,7 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT for table `browsing_history`
 --
 ALTER TABLE `browsing_history`
-  MODIFY `search_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
+  MODIFY `search_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
 
 --
 -- AUTO_INCREMENT for table `client`
@@ -478,16 +489,10 @@ ALTER TABLE `client`
   MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `review`
@@ -499,13 +504,13 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `seller`
 --
 ALTER TABLE `seller`
-  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- Constraints for dumped tables
