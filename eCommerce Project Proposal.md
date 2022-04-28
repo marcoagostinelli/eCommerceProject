@@ -29,12 +29,10 @@ Arshjit's features:
 6. User: filtering products [^3]
 7. User: view browsing history
 8. User: clear browsing history
-9. User: view related products according to the item that is selected [^4]
+9. User: view reviews posted by other clients
 10. User: remove products from wish list[^5]
 [^2]: This should be only for those products that were purchased.
 [^3]: In order to track a delivery a seller must have shipped a product and entered the delivery information. This should be a story as well.
-[^4]: How do you plan on generating the suggestions? Is there a mechanism that you can readily choose to generate them or are they input by the site admins?
-Suggestions will be generated after a client makes their first purchase. It will contain random products from the category that the client has bought from
 [^5]: Usually, if you can add to the wish list, then you should be able to remove from it as well.
 
 We will spend around 100 hours developping this eCommerce website. (50 hours each)
