@@ -23,7 +23,6 @@
 		<div style="border-top:1px solid";><br>
 			<p><?php echo _($data['product']->description)?><p><br>
 			<p><?php echo  _($data['product']->quantity) . _(" Products Remain in Stock")?> <p><br>
-			<p><?php echo _("Rating: "). _($data['product']->rating) . "/5"?><p>
 		</div>
 		<div style="border-top:1px solid;"><br>
 			<h4><?= _("Product Reviews") ?></h4><br>			
