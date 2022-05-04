@@ -1,17 +1,17 @@
-# User Guide – Marketplace web application
+# User Guide â€“ Marketplace web application
 
 
 ### Feature 1: List products for sale as Seller
 
 Step 1. You must be logged in as a seller
 
-Step 2. From the main page you select “My Products”
+Step 2. From the main page you select â€œMy Productsâ€
 
-Step 3. Then Select “Create Product”
+Step 3. Then Select â€œCreate Productâ€
 
 Step 4. Input all details for the product (Product image is not mandatory)
 
-Step 5. Select “Confirm”
+Step 5. Select â€œConfirmâ€
 
 Your product is now visible on the main page below its category.
 
@@ -20,9 +20,9 @@ Your product is now visible on the main page below its category.
 
 Step 1. You must be logged in as a seller
 
-Step 2. From the main page select “My Products”
+Step 2. From the main page select â€œMy Productsâ€
 
-Step 3. Then select “Remove Product” on the product you would like to remove
+Step 3. Then select â€œRemove Productâ€ on the product you would like to remove
 
 Your product is now deleted and no longer visible to anyone.
 
@@ -40,7 +40,7 @@ Step 1. Go to the main page
 
 Step 2. Enter the full or part of a product name you would like to search
 
-Step 3. Select “Go”
+Step 3. Select â€œGoâ€
 
 Only products that contain the text you searched are now visible.
 
@@ -49,12 +49,13 @@ Only products that contain the text you searched are now visible.
 
 Step 1. You must be logged in as a client
 
-Step 2. Select “Client Profile”
-Step 3. Select “Change Profile Picture”
+Step 2. Select â€œClient Profileâ€
 
-Step 4. Select “Choose file” and select the image from your computer you would like
+Step 3. Select â€œChange Profile Pictureâ€
 
-Step 5. Select “Add Picture”
+Step 4. Select â€œChoose fileâ€ and select the image from your computer you would like
+
+Step 5. Select â€œAdd Pictureâ€
 
 Your new profile picture is now visible at the top of the screen and will be included when you write a review.
 
@@ -67,7 +68,7 @@ Step 2. Select an item you wish to add to cart
 
 Step 3. Select the number of items you want
 
-Step 4. Select “Add to Cart”
+Step 4. Select â€œAdd to Cartâ€
 
 If there is enough if the product in stock, it will be successfully added to your cart.
 
@@ -76,7 +77,7 @@ If there is enough if the product in stock, it will be successfully added to you
 
 Step 1. You must be logged in as a client
 
-Step 2. Select “My Cart”
+Step 2. Select â€œMy Cartâ€
 
 All items in your cart are now visible.
 
@@ -87,7 +88,7 @@ Step 1. You must be logged in as a client
 
 Step 2. Select an item you wish to add to Wishlist
 
-Step 3. Select “Add to Wishlist”
+Step 3. Select â€œAdd to Wishlistâ€
 
 The product will now be added to your Wishlist.
 
@@ -98,7 +99,7 @@ Step 1. Make sure you are on the main page
 
 Step 2. Select a product you want to view
 
-The product’s description is now visible.
+The productâ€™s description is now visible.
 
 
 ### Feature 10: Leave a review on a product as Client
@@ -107,10 +108,10 @@ Step 1: You must be logged in as a client
 
 Step 2. Select a product you want to leave a review on
 
-Step 3. Select “Leave Review”
+Step 3. Select â€œLeave Reviewâ€
 
-Step 4. Enter your review in the “Message” box
+Step 4. Enter your review in the â€œMessageâ€ box
 
-Step 5. Select “Confirm Review”
+Step 5. Select â€œConfirm Reviewâ€
 
 Your review will now be displayed on the product page for others to see.
