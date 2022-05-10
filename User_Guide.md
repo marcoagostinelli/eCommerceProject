@@ -115,3 +115,132 @@ Step 4. Enter your review in the “Message” box
 Step 5. Select “Confirm Review”
 
 Your review will now be displayed on the product page for others to see.
+
+
+### Feature 11: Update quantity of product
+
+Step 1: You must be logged in as a seller
+
+Step 2. Select "My Products"
+
+Step 3. Choose a product
+
+Step 4. Select "Update Product Quantity"
+
+Step 5. Input a quantity value
+
+The updated product quantity will be visible.
+
+
+### Feature 12: View how much inventory is left for a product
+
+Step 1: Must be logged as seller
+
+Step 2. Select "My Products"
+
+Each product will have the amount of quantity displayed.
+
+
+### Feature 13: Remove a product from cart
+
+Step 1: You must be logged in as a customer
+
+Step 2. Select "My Cart"
+
+Step 3. Each product will be listed in this page
+
+Step 4. Choose a product to remove
+
+Step 5. Choose a product to remove
+
+Step 6. Select "Remove"
+
+The product will be removed from the cart.
+
+
+### Feature 14: Input payment details
+
+Step 1: On the main page, select "Register"
+
+Step 2. Input username, password, first name, last name
+
+Step 3. Select "Client"
+
+Step 4. There is a section to input payment details
+
+Step 4. Input Payment Information and Address
+
+The payment details will be saved for that user.
+
+
+### Feature 15: Input shipping details
+
+Step 1: On the main page, select "Register"
+
+Step 2. Input username, password, first name, last name
+
+Step 3. Select "Client"
+
+Step 4. There is a section to input shipping details or address
+
+Step 5. Input Payment Information and Address
+
+The shipping details will be saved for that user.
+
+
+### Feature 16: Filtering products
+
+Step 1: On the main page, search for a product
+
+Step 2. Products will be displayed
+
+According to the search, products will be displayed.
+
+
+### Feature 17: View browsing history
+
+Step 1: You must be logged in as a customer
+
+Step 2. Select "My Browsing History"
+
+Step 3. Each product you clicked on will be displayed
+
+Client's whole browsing history will be displayed.
+
+
+### Feature 18: Clear browsing history
+
+Step 1: You must be logged in as a customer
+
+Step 2. Select "My Browsing History"
+
+Step 3. A clear button will be at the bottom of the page
+
+Step 4. Select "Clear"
+
+Client's browsing history will be cleared.
+
+### Feature 19: View reviews posted by other clients
+
+Step 1: Open main page
+
+Step 2. Select a product
+
+Step 3. Under product details, the reviews are displayed
+
+Reviews can be seen for that product
+
+
+### Feature 20: Remove products from wish list
+
+Step 1. You must be logged in as a client
+
+Step 2. Select "My Wishlist"
+
+Step 3. All the products added to your wish list will be displayed
+
+Step 4. Choose the product you wish to remove from the wish list
+
+Step 5. Select "Remove"
+
+The removed product won't appear in the wish list.
